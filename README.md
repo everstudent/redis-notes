@@ -99,3 +99,10 @@ MULTI
 SET mykey $val           -> execute only if mykey is not changed since we watch it
 EXEC
 ```
+
+### Bulk data loading
+```bash
+echo "SET Key0 Value0" > data.txt
+echo "SET Key1 Value1" >> data.txt
+cat data.txt | redis-cli --pipe
+```
